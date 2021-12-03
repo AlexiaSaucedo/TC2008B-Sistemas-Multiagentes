@@ -5,6 +5,7 @@ using UnityEngine;
 public class SimulationSemaforos : MonoBehaviour
 {
     public SimulationParametros parametros;
+    public SemaforoComportamiento[] semaforosCompartir;
     private int currentStep = 0;
     public int x;
     private List<int> estados;
@@ -13,12 +14,13 @@ public class SimulationSemaforos : MonoBehaviour
     public GameObject[] semaforos;
     private bool firstTime = true;
     public Material verde;
+    public Material amarillo;
     public Material rojo;
     // Start is called before the first frame update
     void Start()
     {
-        Application.targetFrameRate = parametros.frameRate;
-        x = parametros.cantidadSemaforos;
+        //Application.targetFrameRate = parametros.frameRate;
+        
         ReadCSVFile();
     }
 
@@ -37,6 +39,7 @@ public class SimulationSemaforos : MonoBehaviour
     {
         if(firstTime)
         {
+            x = parametros.cantidadSemaforos;
             for(int i = 0; i < x; i++)
             {
                 Instantiate(semaforo, parametros.semaforoPositions[i], Quaternion.identity);
@@ -53,9 +56,16 @@ public class SimulationSemaforos : MonoBehaviour
             if(estados[currentStep+i] == 1)
             {
                 semaforos[i].GetComponent<MeshRenderer>().material = rojo;
+                semaforosCompartir[i].setRojo();
+            }
+            else if(estados[currentStep+i] == 2)
+            {
+                semaforos[i].GetComponent<MeshRenderer>().material = amarillo;
+                semaforosCompartir[i].setAmarillo();
             }
             else{
                 semaforos[i].GetComponent<MeshRenderer>().material = verde;
+                semaforosCompartir[i].setVerde();
             }
         }
         currentStep = currentStep + x;

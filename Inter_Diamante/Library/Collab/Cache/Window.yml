@@ -14,13 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Scenes/car scene.unity
-    - Assets/Scripts.meta
-    - Assets/Scripts/TCPIPServerAsync.cs
-    - Assets/Scripts/TCPIPServerAsync.cs.meta
+    - Assets/SimulacionesTexto/infoCarros (1).csv
+    - Assets/SimulacionesTexto/infoCarros (1).csv.meta
+    - Assets/SimulacionesTexto/infoCarros (2).csv
+    - Assets/SimulacionesTexto/infoCarros (2).csv.meta
+    - Assets/SimulacionesTexto/infoCarros (3).csv
+    - Assets/SimulacionesTexto/infoCarros (3).csv.meta
+    - Assets/SimulacionesTexto/infoSemaforos (1).csv
+    - Assets/SimulacionesTexto/infoSemaforos (1).csv.meta
+    - Assets/SimulacionesTexto/infoSemaforos (2).csv
+    - Assets/SimulacionesTexto/infoSemaforos (2).csv.meta
+    - Assets/SimulacionesTexto/infoSemaforos (3).csv
+    - Assets/SimulacionesTexto/infoSemaforos (3).csv.meta
+    - Assets/SimulacionesTexto/parametros (1).csv
+    - Assets/SimulacionesTexto/parametros (1).csv.meta
+    - Assets/SimulacionesTexto/parametros (2).csv
+    - Assets/SimulacionesTexto/parametros (2).csv.meta
+    - Assets/SimulacionesTexto/parametros (3).csv
+    - Assets/SimulacionesTexto/parametros (3).csv.meta
     - ProjectSettings/ProjectVersion.txt
     - 
-    m_Values: 000000000000
+    m_Values: 0000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

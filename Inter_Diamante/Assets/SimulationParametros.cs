@@ -27,10 +27,11 @@ public class SimulationParametros : MonoBehaviour
                 cantidadCarros = int.Parse(dataValues[0]);
                 cantidadSemaforos = int.Parse(dataValues[1]);
                 frameRate = (int) (1.0f / float.Parse(dataValues[3]));
+                Application.targetFrameRate = frameRate;
             }
             else
             {
-                semaforoPositions.Add(new Vector3(float.Parse(dataValues[0]), float.Parse(dataValues[2]), float.Parse(dataValues[1])));
+                semaforoPositions.Add(new Vector3(0f,0f,0f));
             }
         }
     }

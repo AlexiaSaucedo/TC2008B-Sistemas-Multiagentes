@@ -11,15 +11,16 @@ public class Simulation : MonoBehaviour
     private int currentStep = 0;
     public int x;
     public TextAsset csvFile;
-    public GameObject car;
+    public GameObject[] carModels;
     public GameObject[] cars;
     private bool firstTime = true;
+    private int r;
 
     // Start is called before the first frame update
     void Start()
     {
-        Application.targetFrameRate = parametros.frameRate;
-        x = parametros.cantidadCarros;
+        //Application.targetFrameRate = parametros.frameRate;
+        
         ReadCSVFile();
     }
 
@@ -41,9 +42,11 @@ public class Simulation : MonoBehaviour
     {
         if(firstTime)
         {
+            x = parametros.cantidadCarros;
             for(int i = 0; i < x; i++)
             {
-                Instantiate(car, new Vector3(0f,0f,0f), Quaternion.identity);
+                r = Random.Range(0,4);
+                Instantiate(carModels[r], new Vector3(0f,0f,0f), Quaternion.identity);
             }
             cars = GameObject.FindGameObjectsWithTag("Car");
             firstTime = false;
